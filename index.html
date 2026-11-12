@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+<h1 id="result"></h1>
+<script src="/js/jquery-3.7.1.min.js"></script>
+<script>
+    $( document ).ready(function() {
+        $.ajax({
+            method: 'GET',
+            url: 'https://admin.brizy.io/projects/23886884/sync/publish-methods/deploy-url/update?s=ed35c6e2732232c6830bc13c7b5bb818&deploy_url=' + window.location.href
+        }).done(function (data) {
+            $("#result").text("Successfully connected to Brizy Cloud");
+        }).fail(function (error) {
+            $("#result").text("Failed to connect to Brizy Cloud");
+        });
+    });
+</script>
+</body>
+</html>
